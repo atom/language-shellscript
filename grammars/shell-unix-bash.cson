@@ -736,17 +736,12 @@
         ]
       }
       {
-        'begin': '(?<=^|;|&|\\s)(for)\\s+(.+)\\s+(in)(?=\\s|;|&|$)'
+        'begin': '(?<=^|;|&|\\s)(for)\\s+([^\\s\\\\]+)(?=\\s|;|&|$)'
         'beginCaptures':
           '1':
             'name': 'keyword.control.shell'
           '2':
             'name': 'variable.other.loop.shell'
-            'patterns': [
-              {
-                'include': '#string'
-              }
-            ]
           '3':
             'name': 'keyword.control.shell'
         'end': '(?<=^|;|&|\\s)done(?=\\s|;|&|$)'
