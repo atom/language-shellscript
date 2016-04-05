@@ -20,6 +20,9 @@
   'for … done':
     'prefix': 'for'
     'body': 'for (( i = 0; i < ${1:10}; i++ )); do\n\t${0:#statements}\ndone'
+  'for … in … done':
+    'prefix': 'forin'
+    'body': 'for ${1:var} in ${2:words}; do\n\t${0:#statements}\ndone'
   'if … fi':
     'prefix': 'if'
     'body': 'if ${2:[[ ${1:condition} ]]}; then\n\t${0:#statements}\nfi'
