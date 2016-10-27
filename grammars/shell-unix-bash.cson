@@ -578,6 +578,50 @@
         ]
       }
       {
+        'begin': '(<<)-("|\'|)(SQL)\\2'
+        'beginCaptures':
+          '1':
+            'name': 'keyword.operator.heredoc.shell'
+          '3':
+            'name': 'keyword.control.heredoc-token.shell'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.string.shell'
+        'contentName': 'source.sql'
+        'end': '^\\t*(SQL)\\b'
+        'endCaptures':
+          '1':
+            'name': 'keyword.control.heredoc-token.shell'
+        'name': 'string.unquoted.heredoc.sql.shell'
+        'patterns': [
+          {
+            'include': 'source.sql'
+          }
+        ]
+      }
+      {
+        'begin': '(<<)("|\'|)(SQL)\\2'
+        'beginCaptures':
+          '1':
+            'name': 'keyword.operator.heredoc.shell'
+          '3':
+            'name': 'keyword.control.heredoc-token.shell'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.string.shell'
+        'contentName': 'source.sql'
+        'end': '^(SQL)\\b'
+        'endCaptures':
+          '1':
+            'name': 'keyword.control.heredoc-token.shell'
+        'name': 'string.unquoted.heredoc.sql.shell'
+        'patterns': [
+          {
+            'include': 'source.sql'
+          }
+        ]
+      }
+      {
         'begin': '(<<)-("|\'|)\\\\?(\\w+)\\2'
         'beginCaptures':
           '1':
