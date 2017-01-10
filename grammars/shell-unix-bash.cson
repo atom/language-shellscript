@@ -783,6 +783,11 @@
             'name': 'keyword.control.shell'
           '2':
             'name': 'variable.other.loop.shell'
+            'patterns': [
+              {
+                'include': '#string'
+              }
+            ]
           '3':
             'name': 'keyword.control.shell'
         'end': '(?<=^|;|&|\\s)done(?=\\s|;|&|$)'
