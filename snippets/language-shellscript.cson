@@ -26,6 +26,9 @@
   'for … done':
     'prefix': 'for'
     'body': 'for (( i = 0; i < ${1:10}; i++ )); do\n\t${0:#statements}\ndone'
+  'for … in … done':
+    'prefix': 'forin'
+    'body': 'for ${1:var} in ${2:words}; do\n\t${0:#statements}\ndone'
   'function …':
     'prefix': 'function'
     'body': 'function ${1:name}(${2:parameter}) {\n\t${3:#statements}\n}'

@@ -744,7 +744,7 @@
         ]
       }
       {
-        'begin': '(?<=^|;|&|\\s)(for)\\s+(.+?)\\s+(in)(?=\\s|;|&|$)'
+        'begin': '(?<=^|;|&|\\s)(for)\\s+([^\\s\\\\]+)(?=\\s|;|&|$)'
         'beginCaptures':
           '1':
             'name': 'keyword.control.shell'
