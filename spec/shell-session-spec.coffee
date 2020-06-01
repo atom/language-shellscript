@@ -14,7 +14,7 @@ describe "Shell session grammar", ->
     expect(grammar).toBeDefined()
     expect(grammar.scopeName).toBe "text.shell-session"
 
-  prompts = [">", "$", "#", "%"]
+  prompts = [">", "$", "#", "%", "❯", "➜"]
   it "tokenizes prompts", ->
     for delim in prompts
       {tokens} = grammar.tokenizeLine(delim + ' echo $FOO')
