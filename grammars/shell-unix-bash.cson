@@ -548,7 +548,7 @@
         ]
       }
       {
-        'begin': '(<<)-\\s*("|\'|)\\s*\\\\?([^;&<\\s]+)\\2'
+        'begin': '(<<)-\\s*("|\')\\s*\\\\?([^;&<\\s]+)\\2'
         'beginCaptures':
           '1':
             'name': 'keyword.operator.heredoc.shell'
@@ -561,7 +561,7 @@
         'name': 'string.unquoted.heredoc.no-indent.shell'
       }
       {
-        'begin': '(<<)\\s*("|\'|)\\s*\\\\?([^;&<\\s]+)\\2'
+        'begin': '(<<)\\s*("|\')\\s*\\\\?([^;&<\\s]+)\\2'
         'beginCaptures':
           '1':
             'name': 'keyword.operator.heredoc.shell'
@@ -572,6 +572,56 @@
           '1':
             'name': 'keyword.control.heredoc-token.shell'
         'name': 'string.unquoted.heredoc.shell'
+      }
+      {
+        'begin': '(<<)-\\s*\\\\?([^;&<\\s]+)'
+        'beginCaptures':
+          '1':
+            'name': 'keyword.operator.heredoc.shell'
+          '2':
+            'name': 'keyword.control.heredoc-token.shell'
+        'end': '^\\t*(\\2)(?=\\s|;|&|$)'
+        'endCaptures':
+          '1':
+            'name': 'keyword.control.heredoc-token.shell'
+        'name': 'string.unquoted.heredoc.expanded.no-indent.shell'
+        'patterns': [
+          {
+            'match': '\\\\[\\$`\\\\\\n]'
+            'name': 'constant.character.escape.shell'
+          }
+          {
+            'include': '#variable'
+          }
+          {
+            'include': '#interpolation'
+          }
+        ]
+      }
+      {
+        'begin': '(<<)\\s*\\\\?([^;&<\\s]+)'
+        'beginCaptures':
+          '1':
+            'name': 'keyword.operator.heredoc.shell'
+          '2':
+            'name': 'keyword.control.heredoc-token.shell'
+        'end': '^(\\2)(?=\\s|;|&|$)'
+        'endCaptures':
+          '1':
+            'name': 'keyword.control.heredoc-token.shell'
+        'name': 'string.unquoted.heredoc.expanded.shell'
+        'patterns': [
+          {
+            'match': '\\\\[\\$`\\\\\\n]'
+            'name': 'constant.character.escape.shell'
+          }
+          {
+            'include': '#variable'
+          }
+          {
+            'include': '#interpolation'
+          }
+        ]
       }
     ]
   'herestring':
