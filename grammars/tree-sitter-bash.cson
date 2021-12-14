@@ -12,7 +12,7 @@ injectionRegex: '^(bash|sh|BASH|SH)$'
 
 firstLineRegex: [
   # shebang line
-  '^#!.*\\b(bash|sh)\\r?\\n'
+  '^#!.*\\b(bash|sh)(\\r?\\n|\\s)'
 
   # vim modeline
   'vim\\b.*\\bset\\b.*\\b(filetype|ft|syntax)=(sh|bash)'
