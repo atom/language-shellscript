@@ -1,4 +1,5 @@
-# ShellScript language support in Atom
+##### Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+ # ShellScript language support in Atom
 ![CI Status](https://github.com/atom/language-shellscript/actions/workflows/main.yml/badge.svg)
 
 Adds syntax highlighting and snippets to shell scripts in Atom.
